@@ -1,12 +1,12 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 function NavLink({ href, children }) {
   const location = useLocation();
   const isActive = location.pathname === href;
 
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className={`transition-transform duration-200 ease-in-out inline-block ${
         isActive
           ? "text-cyan-300 dark:text-cyan-400 text-2xl scale-[1.05] underline decoration-4 underline-offset-8"
@@ -14,7 +14,7 @@ function NavLink({ href, children }) {
       }`}
     >
       {children}
-    </a>
+    </Link>
   );
 }
 
