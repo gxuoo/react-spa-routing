@@ -1,4 +1,5 @@
 import NavContainer from "./nav/NavContainer";
+import ChangeMode from "./ChangeMode";
 
 const Header = () => {
   return (
@@ -7,6 +8,7 @@ const Header = () => {
         <h1 className="text-3xl font-bold w-1/2 dark:text-gray-400">
           News Web Viewer
         </h1>
+        <ChangeMode />
       </div>
       <NavContainer />
     </header>
