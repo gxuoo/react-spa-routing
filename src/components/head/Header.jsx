@@ -1,3 +1,5 @@
+import NavContainer from "./nav/NavContainer";
+
 const Header = () => {
   return (
     <header className="bg-gray-800 dark:bg-gray-900 text-white p-6">
