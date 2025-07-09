@@ -1,7 +1,9 @@
 import { useState } from "react";
+import useThemeStore from "../../store/useThemeStore";
 
 const News = ({ article }) => {
   const [showImage, setShowImage] = useState(true);
+  const theme = useThemeStore((state) => state.theme);
 
   if (article.content === null && article.description === null) {
     return (
@@ -26,6 +28,9 @@ const News = ({ article }) => {
         flex flex-col md:flex-row bg-white dark:bg-gray-800 text-black dark:text-white 
         rounded-xl overflow-hidden transition-shadow duration-400 ease-in-out cursor-pointer 
         ${
+          theme === "dark"
+            ? "shadow-xs shadow-gray-600 hover:shadow-md"
+            : "shadow-md hover:shadow-xl"
         }`}
       onClick={handleClick}
       role="link"
