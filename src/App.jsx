@@ -1,11 +1,20 @@
-import "./App.css";
+import { useEffect } from "react";
+import useThemeStore from "./store/useThemeStore";
+import Router from "./router/Router";
 
-function App() {
-  return (
-    <>
-      <h1>그리디 미션 : 뉴스 웹 뷰어 시이작!</h1>
-    </>
-  );
-}
+const App = () => {
+  const theme = useThemeStore((state) => state.theme);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  }, [theme]);
+
+  return <Router />;
+};
 
 export default App;
